@@ -96,7 +96,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         time_window: int = call.data["time_window"]
         max_points: int = call.data["max_points"]
         costing: str = call.data["costing"]
-        edge_attributes: list[str] = call.data["edge_attributes"]
+        attributes: list[str] = call.data["attributes"]
 
         # ---- 1. Resolve the reference timestamp -------------------------
 
