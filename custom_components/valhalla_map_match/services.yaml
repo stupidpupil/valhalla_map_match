@@ -1,0 +1,111 @@
+map_match:
+  name: Map Match Device Tracker
+  description: >-
+    Match a device tracker's recent GPS history to roads using Valhalla,
+    returning the matched route as a sequence of edge descriptors with
+    the attributes you request.
+  fields:
+    entity_id:
+      name: Device Tracker
+      description: The device tracker entity whose location history to map-match.
+      required: true
+      selector:
+        entity:
+          domain: device_tracker
+
+    timestamp:
+      name: Reference Timestamp
+      description: >-
+        End of the history window. Defaults to the entity's most recent
+        last_updated time if omitted.
+      required: false
+      selector:
+        datetime:
+
+    time_window:
+      name: Time Window
+      description: >-
+        How many minutes of history to look back from the reference timestamp.
+      required: false
+      default: 10
+      selector:
+        number:
+          min: 1
+          max: 60
+          step: 1
+          unit_of_measurement: min
+          mode: box
+
+    max_points:
+      name: Max Points
+      description: >-
+        Maximum number of GPS points to send to Valhalla. The most recent
+        points within the time window are used.
+      required: false
+      default: 6
+      selector:
+        number:
+          min: 2
+          max: 50
+          step: 1
+          mode: box
+
+    costing:
+      name: Costing Model
+      description: >-
+        Valhalla routing cost model used for map matching.
+      required: false
+      default: auto
+      selector:
+        select:
+          options:
+            - auto
+            - pedestrian
+            - bicycle
+            - bus
+            - truck
+            - motor_scooter
+            - motorcycle
+
+    edge_attributes:
+      name: Edge Attributes
+      description: >-
+        Valhalla edge attributes to include in the response for each matched
+        road segment.
+      required: false
+      selector:
+        select:
+          multiple: true
+          options:
+            - label: Road names
+              value: edge.names
+            - label: End heading
+              value: edge.end_heading
+            - label: Begin heading
+              value: edge.begin_heading
+            - label: Speed
+              value: edge.speed
+            - label: Road class
+              value: edge.road_class
+            - label: Surface type
+              value: edge.surface
+            - label: Length
+              value: edge.length
+            - label: Lane count
+              value: edge.lane_count
+            - label: Maximum speed
+              value: edge.max_speed
+            - label: Bicycle network
+              value: edge.bicycle_network
+            - label: Use type (e.g. driveway, parking aisle)
+              value: edge.use
+            - label: Toll road
+              value: edge.toll
+            - label: Tunnel
+              value: edge.tunnel
+            - label: Bridge
+              value: edge.bridge
+            - label: Roundabout
+              value: edge.roundabout
+            - label: Internal intersection
+              value: edge.internal_intersection

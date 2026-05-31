@@ -1,0 +1,27 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configure Valhalla Connection",
+        "description": "Enter the connection details for your Valhalla routing engine instance.",
+        "data": {
+          "host": "Hostname or IP address",
+          "port": "Port",
+          "ssl": "Use SSL/HTTPS"
+        },
+        "data_description": {
+          "host": "The hostname or IP address of your Valhalla instance (e.g. 192.168.1.100 or valhalla.local)",
+          "port": "The port Valhalla is listening on (default: 8002)",
+          "ssl": "Enable if your Valhalla instance is served over HTTPS"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Unable to connect to Valhalla. Check the hostname, port, and SSL setting, and that the instance is running.",
+      "unknown": "Unexpected error — check your Home Assistant logs for details."
+    },
+    "abort": {
+      "already_configured": "A Valhalla instance is already configured. Only one connection is supported."
+    }
+  }
+}

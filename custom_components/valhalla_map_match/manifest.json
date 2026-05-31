@@ -1,0 +1,11 @@
+{
+  "domain": "valhalla_map_match",
+  "name": "Valhalla Map Match",
+  "version": "1.0.0",
+  "documentation": "",
+  "requirements": [],
+  "dependencies": ["recorder"],
+  "codeowners": [],
+  "iot_class": "local_polling",
+  "config_flow": true
+}
