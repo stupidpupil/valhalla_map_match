@@ -35,6 +35,7 @@ from .const import (
     DEFAULT_TIME_WINDOW,
     DOMAIN,
     SERVICE_MAP_MATCH,
+    XCLIENTID
 )
 
 _LOGGER = logging.getLogger(__name__)
@@ -196,6 +197,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
                 f"{base_url}/trace_attributes",
                 json=payload,
                 timeout=aiohttp.ClientTimeout(total=30),
+                headers={'X-Client-ID': XCLIENTID}
             ) as resp:
                 # Parse the body regardless of status so we can surface
                 # Valhalla's own error message when things go wrong.

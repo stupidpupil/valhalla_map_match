@@ -23,3 +23,5 @@ COSTING_MODELS = [
     "motor_scooter",
     "motorcycle",
 ]
+
+XCLIENTID = "https://github.com/stupidpupil/valhalla_map_match"
