@@ -67,11 +67,10 @@ map_match:
             - motor_scooter
             - motorcycle
 
-    edge_attributes:
-      name: Edge Attributes
+    attributes:
+      name: Attributes
       description: >-
-        Valhalla edge attributes to include in the response for each matched
-        road segment.
+        Valhalla attributes to include.
       required: false
       selector:
         select:
@@ -109,3 +108,7 @@ map_match:
               value: edge.roundabout
             - label: Internal intersection
               value: edge.internal_intersection
+            - label: Shape
+              value: shape
+            - label: Matched points
+              value: matched.point

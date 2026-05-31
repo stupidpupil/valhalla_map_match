@@ -10,7 +10,7 @@ DEFAULT_PORT = 8002
 DEFAULT_COSTING = "auto"
 DEFAULT_TIME_WINDOW = 10  # minutes
 DEFAULT_MAX_POINTS = 6
-DEFAULT_EDGE_ATTRIBUTES = ["edge.names", "edge.end_heading"]
+DEFAULT_ATTRIBUTES = ["edge.names", "edge.end_heading"]
 
 SERVICE_MAP_MATCH = "map_match"
 

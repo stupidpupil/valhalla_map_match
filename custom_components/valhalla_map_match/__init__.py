@@ -30,7 +30,7 @@ from .const import (
     CONF_PORT,
     CONF_SSL,
     DEFAULT_COSTING,
-    DEFAULT_EDGE_ATTRIBUTES,
+    DEFAULT_ATTRIBUTES,
     DEFAULT_MAX_POINTS,
     DEFAULT_TIME_WINDOW,
     DOMAIN,
@@ -67,7 +67,7 @@ SERVICE_MAP_MATCH_SCHEMA = vol.Schema(
             vol.Coerce(int), vol.Range(min=2, max=50)
         ),
         vol.Optional("costing", default=DEFAULT_COSTING): vol.In(COSTING_MODELS),
-        vol.Optional("edge_attributes", default=DEFAULT_EDGE_ATTRIBUTES): vol.All(
+        vol.Optional("attributes", default=DEFAULT_ATTRIBUTES): vol.All(
             cv.ensure_list, [cv.string]
         ),
     }
@@ -186,7 +186,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             "costing": costing,
             "shape_match": "map_snap",
             "filters": {
-                "attributes": edge_attributes,
+                "attributes": attributes,
                 "action": "include",
             },
         }
