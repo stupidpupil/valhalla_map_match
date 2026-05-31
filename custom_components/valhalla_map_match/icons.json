@@ -1,0 +1,5 @@
+{
+  "services": {
+    "map_match": {"service": "mdi:map-marker-path"},
+  }
+}
