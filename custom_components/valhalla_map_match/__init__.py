@@ -17,12 +17,7 @@ from homeassistant.helpers.aiohttp_client import async_get_clientsession
 import homeassistant.helpers.config_validation as cv
 from homeassistant.util import dt as dt_util
 
-# ServiceValidationError was introduced in HA 2024.1; fall back to the base
-# HomeAssistantError for anyone on an older release.
-try:
-    from homeassistant.exceptions import ServiceValidationError
-except ImportError:
-    from homeassistant.exceptions import HomeAssistantError as ServiceValidationError  # type: ignore[assignment]
+from homeassistant.exceptions import ServiceValidationError
 
 from .const import (
     COSTING_MODELS,
