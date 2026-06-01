@@ -24,4 +24,4 @@ COSTING_MODELS = [
     "motorcycle",
 ]
 
-XCLIENTID = "https://github.com/stupidpupil/valhalla_map_match"
+XCLIENTID = "https://github.com/stupidpupil/ha_valhalla_map_match"
