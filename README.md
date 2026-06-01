@@ -3,7 +3,7 @@
 
 This is a custom integration for Home Assistant that adds a service action to match a [device tracker's](https://www.home-assistant.io/integrations/device_tracker/) coordinate history to roads and paths that have been mapped in [OpenStreetMap](https://www.openstreetmap.org) using [Valhalla](https://valhalla.github.io/valhalla/).
 
-You could, for example, used to more accurately estimate the distance travelled at the end of a journey or to identify the road and heading when a vehicle enters a [zone](https://www.home-assistant.io/integrations/zone/).
+You could, for example, use it to more accurately estimate the distance travelled at the end of a journey or to identify the road and heading when a vehicle enters a [zone](https://www.home-assistant.io/integrations/zone/).
 
 > [!CAUTION]
 > This project includes code produced with a "generative AI". This is documented here for transparency.
