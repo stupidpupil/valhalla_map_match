@@ -222,9 +222,12 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         # ---- 6. Return structured response data -------------------------
 
         return {
+            "admins": response_data.get("admins", []),
             "edges": response_data.get("edges", []),
             "matched_points": response_data.get("matched_points", []),
             "shape": response_data.get("shape", ""),
+            "shape_attributes": response_data.get("shape_attributes", []),
+            "units": response_data.get("units", ""),
             "entity_id": entity_id,
             "costing": costing,
             "shape_point_count": len(shape),
