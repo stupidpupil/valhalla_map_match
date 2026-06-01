@@ -61,10 +61,10 @@ SERVICE_MAP_MATCH_SCHEMA = vol.Schema(
         vol.Required("entity_id"): cv.entity_id,
         vol.Optional("timestamp"): _parse_timestamp,
         vol.Optional("time_window", default=DEFAULT_TIME_WINDOW): vol.All(
-            vol.Coerce(int), vol.Range(min=1, max=60)
+            vol.Coerce(int), vol.Range(min=1, max=60*24*7)
         ),
         vol.Optional("max_points", default=DEFAULT_MAX_POINTS): vol.All(
-            vol.Coerce(int), vol.Range(min=2, max=50)
+            vol.Coerce(int), vol.Range(min=2, max=128)
         ),
         vol.Optional("costing", default=DEFAULT_COSTING): vol.In(COSTING_MODELS),
         vol.Optional("attributes", default=DEFAULT_ATTRIBUTES): vol.All(
