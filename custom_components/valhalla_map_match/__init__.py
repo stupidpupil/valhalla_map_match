@@ -169,7 +169,11 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         selected = located[-max_points:]
 
         shape = [
-            {"lat": s.attributes["latitude"], "lon": s.attributes["longitude"]}
+            {
+                "lat": s.attributes["latitude"], 
+                "lon": s.attributes["longitude"],
+                "time": dt_util.as_utc(s.last_updated).timestamp() - start_time.timestamp()
+            }
             for s in selected
         ]
 
@@ -185,6 +189,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             "shape": shape,
             "costing": costing,
             "shape_match": "map_snap",
+            "use_timestamps": True,
             "filters": {
                 "attributes": attributes,
                 "action": "include",
