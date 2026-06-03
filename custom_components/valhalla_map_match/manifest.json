@@ -4,9 +4,9 @@
   "codeowners": ["@stupidpupil"],
   "config_flow": true,
   "dependencies": ["recorder"],
-  "documentation": "https://github.com/stupidpupil/ha_valhalla_map_match",
+  "documentation": "https://github.com/stupidpupil/ha-valhalla-map-match",
   "iot_class": "local_polling",
-  "issue_tracker": "https://github.com/stupidpupil/ha_valhalla_map_match/issues",
+  "issue_tracker": "https://github.com/stupidpupil/ha-valhalla-map-match/issues",
   "requirements": [],
   "version": "1.0.0"
 }

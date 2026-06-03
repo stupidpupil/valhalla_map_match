@@ -8,7 +8,7 @@ You could, for example, use it to more accurately estimate the distance travelle
 > [!CAUTION]
 > This project includes code produced with a "generative AI". This is documented here for transparency.
 
-[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=stupidpupil&repository=ha_valhalla_map_match&category=integration)
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=stupidpupil&repository=ha-valhalla-map-match&category=integration)
 
 ## License
 
